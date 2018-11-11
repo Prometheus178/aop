@@ -9,13 +9,11 @@
 
     <aop:config>
         <aop:aspect id="log" ref="logger">
-            <aop:pointcut id="getValue" expression="execution(* aopTemplate.objects.Service.*(..))"/>
-            <aop:before pointcut-ref="getValue" method="init"/>
-            <aop:after pointcut-ref="getValue" method="close"/>
-            <aop:after-returning pointcut-ref="getValue" returning="object" method="printValue"/>
-        </aop:aspect>
+            <aop:around pointcut="execution(public * * (..))" method="watchTime"/>
+        </aop:aspect >
     </aop:config>
-    <bean id="service" class="aopTemplate.objects.Service"/>
-    <bean id="logger" class="aopTemplate.logging.Logger"/>
+    <aop:aspectj-autoproxy proxy-target-class="true"/>
+    <bean id="fileManager" class="timeCheck.objects.FileManager"/>
+    <bean id="logger" class="timeCheck.logging.Logger"/>
 
 </beans>

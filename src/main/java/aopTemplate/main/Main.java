@@ -1,6 +1,6 @@
-package main;
+package aopTemplate.main;
 
-import objects.Service;
+import aopTemplate.objects.Service;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

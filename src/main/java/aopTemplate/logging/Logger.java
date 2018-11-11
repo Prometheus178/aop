@@ -1,7 +1,4 @@
-package logging;
-
-import objects.Service;
-import org.springframework.stereotype.Component;
+package aopTemplate.logging;
 
 
 public class Logger {

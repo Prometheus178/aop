@@ -9,13 +9,13 @@
 
     <aop:config>
         <aop:aspect id="log" ref="logger">
-            <aop:pointcut id="getValue" expression="execution(* objects.Service.*(..))"/>
+            <aop:pointcut id="getValue" expression="execution(* aopTemplate.objects.Service.*(..))"/>
             <aop:before pointcut-ref="getValue" method="init"/>
             <aop:after pointcut-ref="getValue" method="close"/>
             <aop:after-returning pointcut-ref="getValue" returning="object" method="printValue"/>
         </aop:aspect>
     </aop:config>
-    <bean id="service" class="objects.Service"/>
-    <bean id="logger" class="logging.Logger"/>
+    <bean id="service" class="aopTemplate.objects.Service"/>
+    <bean id="logger" class="aopTemplate.logging.Logger"/>
 
 </beans>

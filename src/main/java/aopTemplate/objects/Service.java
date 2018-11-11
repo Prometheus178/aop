@@ -1,4 +1,4 @@
-package objects;
+package aopTemplate.objects;
 
 public class Service {
     public int getIntValue(){
